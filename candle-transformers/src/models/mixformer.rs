@@ -25,6 +25,34 @@ pub struct Config {
 }
 
 impl Config {
+    pub fn new(
+        vocab_size: usize,
+        n_positions: usize,
+        n_embd: usize,
+        n_layer: usize,
+        n_inner: Option<usize>,
+        n_head: usize,
+        rotary_dim: usize,
+        activation_function: Activation,
+        layer_norm_epsilon: f64,
+        tie_word_embeddings: bool,
+        pad_vocab_size_multiple: usize,
+    ) -> Self {
+        Self {
+            vocab_size,
+            n_positions,
+            n_embd,
+            n_layer,
+            n_inner,
+            n_head,
+            rotary_dim,
+            activation_function,
+            layer_norm_epsilon,
+            tie_word_embeddings,
+            pad_vocab_size_multiple,
+        }
+    }
+
     pub fn v1() -> Self {
         Self {
             vocab_size: 50304,
