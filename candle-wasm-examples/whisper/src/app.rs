@@ -1,8 +1,7 @@
 use crate::console_log;
 use crate::worker::{ModelData, Segment, Worker, WorkerInput, WorkerOutput};
 use js_sys::Date;
-use wasm_bindgen::prelude::*;
-use wasm_bindgen_futures::JsFuture;
+
 use yew::{html, Component, Context, Html};
 use yew_agent::{Bridge, Bridged};
 

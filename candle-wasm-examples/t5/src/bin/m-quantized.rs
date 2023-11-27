@@ -6,14 +6,11 @@ pub use candle_transformers::models::quantized_t5::{
 
 use candle_wasm_example_t5::console_log;
 use tokenizers::Tokenizer;
-use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
 pub struct ModelEncoder {
     model: T5EncoderModel,
     tokenizer: Tokenizer,
 }
-#[wasm_bindgen]
 
 pub struct ModelConditionalGeneration {
     model: T5ForConditionalGeneration,
@@ -21,9 +18,7 @@ pub struct ModelConditionalGeneration {
     config: Config,
 }
 
-#[wasm_bindgen]
 impl ModelConditionalGeneration {
-    #[wasm_bindgen(constructor)]
     pub fn load(
         weights: Vec<u8>,
         tokenizer: Vec<u8>,
@@ -118,9 +113,7 @@ impl ModelConditionalGeneration {
     }
 }
 
-#[wasm_bindgen]
 impl ModelEncoder {
-    #[wasm_bindgen(constructor)]
     pub fn load(
         weights: Vec<u8>,
         tokenizer: Vec<u8>,

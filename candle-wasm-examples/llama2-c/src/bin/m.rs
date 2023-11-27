@@ -1,9 +1,7 @@
 use candle::{Device, Tensor};
 use candle_transformers::generation::LogitsProcessor;
 use candle_wasm_example_llama2::worker::{Model as M, ModelData};
-use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
 pub struct Model {
     inner: M,
     logits_processor: LogitsProcessor,
@@ -39,9 +37,7 @@ impl Model {
     }
 }
 
-#[wasm_bindgen]
 impl Model {
-    #[wasm_bindgen(constructor)]
     pub fn new(weights: Vec<u8>, tokenizer: Vec<u8>) -> Result<Model, JsError> {
         let model = M::load(ModelData {
             tokenizer,
@@ -59,12 +55,10 @@ impl Model {
         }
     }
 
-    #[wasm_bindgen]
     pub fn get_seq_len(&mut self) -> usize {
         self.inner.config.seq_len
     }
 
-    #[wasm_bindgen]
     pub fn init_with_prompt(
         &mut self,
         prompt: String,
@@ -102,7 +96,6 @@ impl Model {
         Ok(text)
     }
 
-    #[wasm_bindgen]
     pub fn next_token(&mut self) -> Result<String, JsError> {
         let last_token = *self.tokens.last().unwrap();
         let text = self

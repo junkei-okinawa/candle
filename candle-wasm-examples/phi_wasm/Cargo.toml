@@ -1,0 +1,19 @@
+[package]
+name = "for_ic_wasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+candle = { package = "candle-core", git = "https://github.com/junkei-okinawa/candle.git", branch = "feature/config_new_for_mixformer" }
+candle-nn = { git = "https://github.com/junkei-okinawa/candle.git", branch = "feature/config_new_for_mixformer" }
+candle-transformers = { git = "https://github.com/junkei-okinawa/candle.git", branch = "feature/config_new_for_mixformer" }
+tokenizers = { version = "0.13.4", default-features = false, features = [
+  "unstable_wasm",
+] }
+safetensors = "0.4.1"
+
+# App crates.
+anyhow = { version = "1", features = ["backtrace"] }
+getrandom = { version = "0.2", features = ["custom"] }
+serde = { version = "1.0.171", features = ["derive"] }
+serde_json = "1.0.99"

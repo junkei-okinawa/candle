@@ -3,17 +3,13 @@ use candle_nn::VarBuilder;
 use candle_transformers::models::bert::{BertModel, Config};
 use candle_wasm_example_bert::console_log;
 use tokenizers::{PaddingParams, Tokenizer};
-use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
 pub struct Model {
     bert: BertModel,
     tokenizer: Tokenizer,
 }
 
-#[wasm_bindgen]
 impl Model {
-    #[wasm_bindgen(constructor)]
     pub fn load(weights: Vec<u8>, tokenizer: Vec<u8>, config: Vec<u8>) -> Result<Model, JsError> {
         console_error_panic_hook::set_once();
         console_log!("loading model");

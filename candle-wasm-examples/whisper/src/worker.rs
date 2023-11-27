@@ -6,14 +6,13 @@ pub use candle_transformers::models::whisper::{self as m, Config};
 use rand::{distributions::Distribution, rngs::StdRng, SeedableRng};
 use serde::{Deserialize, Serialize};
 use tokenizers::Tokenizer;
-use wasm_bindgen::prelude::*;
+
 use yew_agent::{HandlerId, Public, WorkerLink};
 
-#[wasm_bindgen]
 extern "C" {
     // Use `js_namespace` here to bind `console.log(..)` instead of just
     // `log(..)`
-    #[wasm_bindgen(js_namespace = console)]
+
     pub fn log(s: &str);
 }
 

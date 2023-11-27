@@ -1,14 +1,10 @@
 use candle_wasm_example_whisper::worker::{Decoder as D, ModelData};
-use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
 pub struct Decoder {
     decoder: D,
 }
 
-#[wasm_bindgen]
 impl Decoder {
-    #[wasm_bindgen(constructor)]
     #[allow(clippy::too_many_arguments)]
     pub fn new(
         weights: Vec<u8>,
@@ -39,7 +35,6 @@ impl Decoder {
         }
     }
 
-    #[wasm_bindgen]
     pub fn decode(&mut self, wav_input: Vec<u8>) -> Result<String, JsError> {
         let segments = self
             .decoder
