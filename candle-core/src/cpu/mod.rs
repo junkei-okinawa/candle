@@ -45,10 +45,10 @@ pub use avx::{CurrentCpu, CurrentCpuF16};
 
 // #[cfg(target_arch = "wasm32")]
 // #[cfg(target_feature = "simd128")]
-pub mod simd128;
+// pub mod simd128;
 // #[cfg(target_arch = "wasm32")]
 // #[cfg(target_feature = "simd128")]
-pub use simd128::CurrentCpu;
+// pub use simd128::CurrentCpu;
 
 #[cfg(any(target_arch = "arm", target_arch = "aarch64"))]
 #[cfg(target_feature = "neon")]
