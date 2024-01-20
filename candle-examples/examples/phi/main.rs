@@ -201,10 +201,11 @@ fn main() -> Result<()> {
         None
     };
     println!(
-        "avx: {}, neon: {}, simd128: {}, f16c: {}",
+        // "avx: {}, neon: {}, simd128: {}, f16c: {}",
+        "avx: {}, neon: {}, f16c: {}",
         candle::utils::with_avx(),
         candle::utils::with_neon(),
-        candle::utils::with_simd128(),
+        // candle::utils::with_simd128(),
         candle::utils::with_f16c()
     );
     println!(
