@@ -6,7 +6,7 @@ use super::GgmlDType;
 use crate::Result;
 use byteorder::{ByteOrder, LittleEndian};
 use half::f16;
-use rayon::prelude::*;
+// use rayon::prelude::*;
 
 // Default to QK_K 256 rather than 64.
 pub const QK_K: usize = 256;

@@ -25,7 +25,7 @@ num-traits = { workspace = true }
 num_cpus = { workspace = true }
 rand = { workspace = true }
 rand_distr = { workspace = true }
-rayon = { workspace = true }
+# rayon = { workspace = true }
 safetensors = { workspace = true }
 thiserror = { workspace = true }
 yoke = { workspace = true }

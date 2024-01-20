@@ -2,7 +2,7 @@ use crate::backend::{BackendDevice, BackendStorage};
 use crate::op::{BinaryOpT, CmpOp, ReduceOp, UnaryOpT};
 use crate::{DType, Error, IntDType, Layout, Result, Shape, WithDType};
 use half::{bf16, f16};
-use rayon::prelude::*;
+// use rayon::prelude::*;
 
 const USE_IM2COL_CONV1D: bool = true;
 const USE_IM2COL_CONV2D: bool = true;
