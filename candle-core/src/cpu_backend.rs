@@ -1527,7 +1527,7 @@ impl Map2 for MatMul {
         rhs: &[T],
         rhs_l: &Layout,
     ) -> Result<Vec<T>> {
-        use gemm::{gemm, Parallelism};
+        use gemm::gemm;
 
         match T::DTYPE {
             DType::F16 | DType::F32 | DType::F64 => {}
@@ -1567,13 +1567,13 @@ impl Map2 for MatMul {
         let dst_cs = dst_strides[1];
 
         let mut dst = vec![T::zero(); b * m * n];
-        let num_threads = crate::utils::get_num_threads();
+        // let num_threads = crate::utils::get_num_threads();
         // let parallelism = if num_threads > 1 {
         //     Parallelism::Rayon(num_threads)
         // } else {
         //     Parallelism::None
         // };
-        let parallelism = Parallelism::None;
+        let parallelism = gemm::Parallelism::None;
         for step in 0..b {
             let lhs_p = &lhs[step * a_skip..];
             let rhs_p = &rhs[step * b_skip..];
