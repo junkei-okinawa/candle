@@ -1568,11 +1568,12 @@ impl Map2 for MatMul {
 
         let mut dst = vec![T::zero(); b * m * n];
         let num_threads = crate::utils::get_num_threads();
-        let parallelism = if num_threads > 1 {
-            Parallelism::Rayon(num_threads)
-        } else {
-            Parallelism::None
-        };
+        // let parallelism = if num_threads > 1 {
+        //     Parallelism::Rayon(num_threads)
+        // } else {
+        //     Parallelism::None
+        // };
+        let parallelism = Parallelism::None;
         for step in 0..b {
             let lhs_p = &lhs[step * a_skip..];
             let rhs_p = &rhs[step * b_skip..];
