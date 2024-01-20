@@ -43,7 +43,7 @@ pub mod avx;
 #[cfg(target_feature = "avx")]
 pub use avx::{CurrentCpu, CurrentCpuF16};
 
-#[cfg(target_arch = "wasm32")]
+// #[cfg(target_arch = "wasm32")]
 #[cfg(target_feature = "simd128")]
 pub mod simd128;
 #[cfg(target_arch = "wasm32")]
