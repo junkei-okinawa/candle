@@ -2,7 +2,7 @@ mod llm;
 use llm::Model;
 use std::path::{Path, PathBuf};
 
-const MODEL_DIR: &str = "/Users/junkei/Documents/candle/candle-wasm-examples/phi_wasm/model";
+const MODEL_DIR: &str = "./candle-wasm-examples/phi_wasm/model";
 const MODEL_NAME: &str = "Puffin-Phi-v2";
 
 fn main() {
